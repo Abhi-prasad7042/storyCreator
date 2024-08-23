@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    path('/', home_view, name='home'),
     path('token/', MyTokens.as_view()),
     path('token/refresh', TokenRefreshView.as_view()),
     path('register/', RegisterView.as_view()),

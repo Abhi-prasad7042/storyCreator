@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .models import *
 from rest_framework.decorators import api_view, permission_classes
 from .serializer import RegisterSerli, Tokens, ProfileSerializer, StorySerializer, ContributionSerializer
@@ -11,6 +11,9 @@ import logging
 
 
 logger = logging.getLogger(__name__)
+
+def home_view(request):
+    return HttpResponse("Welcome to the Homepage!")
 
 class MyTokens(TokenObtainPairView):
     serial_class = Tokens
