@@ -24,13 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # 'django-insecure-9+e)5dn6kl!m7=m8(+laszg)h%0=1iu5_3d-%k-eagcf6mq=)!'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
+# 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+# 
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
-
+# os.environ.get("ALLOWED_HOSTS").split(" ")
 # Application definition
 
 INSTALLED_APPS = [
@@ -99,7 +101,7 @@ DATABASES = {
 }
 
 database_url = os.environ.get("DATABASE_URL")
-DATABASES['default'] = dj_database_url.parse(database_url)
+DATABASES['default'] = dj_database_url.parse("postgresql://talestogether_django_user:dRQmH9Fm77RywbysiyWXXXu894wKx95i@dpg-cr41d988fa8c73deiks0-a.oregon-postgres.render.com/talestogether_django")
 
 
 # Password validation
